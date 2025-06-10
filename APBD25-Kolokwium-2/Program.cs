@@ -15,6 +15,7 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
 
 
 builder.Services.AddScoped<IDbService, DbService>();
+builder.Services.AddScoped<ITrackRacesService, TrackRacesService>();
 
 builder.Services.AddSwaggerGen();
 
@@ -37,7 +38,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-// dotnet ef migrations add Init - tworzenie migracji
-// dotnet ef database update - aktualizacja bazy danych
-// dotnet ef migrations remove - usuwanie ostatniej migracji
